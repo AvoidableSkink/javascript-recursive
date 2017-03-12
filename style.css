@@ -19,6 +19,27 @@
 	margin-left: 4px;
 }
 
+#pell {
+	display: inline-block;
+	width: 20000px;
+}
+
+.pell {
+	background-color: rgba(0,0,255,0.1);
+}
+
+.pell-left {
+	float: left;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.pell-right {
+	float: right;
+	display: inline-block;
+	margin-left: 4px;
+}
+
 .shadowed {
 	text-shadow: 1px 1px 2px black;
 	color:       white;

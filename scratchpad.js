@@ -1,11 +1,3 @@
-/*
- * This is a JavaScript Scratchpad.
- *
- * Enter some JavaScript, then Right Click or choose from the Execute Menu:
- * 1. Run to evaluate the selected text (Ctrl+R),
- * 2. Inspect to bring up an Object Inspector on the result (Ctrl+I), or,
- * 3. Display to insert the result in a comment after the selection. (Ctrl+L)
- */
 function fibHelper(n) {
 	var value;
 	var div = document.createElement('div');
@@ -49,6 +41,49 @@ var fib = function (n, node) {
 	  node.setAttribute("id", "fib");
 }
 
+function pellHelper(n) {
+	var value;
+	var div = document.createElement('div');
+	div.setAttribute("class", "pell");
+
+	// leaf nodes aka. base case
+	if (n < 2) {
+		if (n === 0) {
+			value = 0;
+		} 
+		else if (n === 1) {
+			value = 1;
+		}
+		var p = document.createElement('p');
+		p.textContent = 'pell(' + n + ') = ' + value;
+		div.appendChild(p)
+	} 
+	else {
+		var left = pellHelper(n - 1);
+		var clas = left.html.getAttribute("class");
+		left.html.setAttribute("class", clas + " pell-left");
+		
+		var right = pellHelper(n - 2);
+		clas = right.html.getAttribute("class");
+		right.html.setAttribute("class", clas + " pell-right");
+
+		value = 2*left.value + right.value;
+		var p = document.createElement('p');
+		p.textContent = 'pell(' + n + ') = ' + value;
+		div.appendChild(p);
+
+		div.appendChild(left.html);
+		div.appendChild(right.html);
+	}
+	return { 'value': value, 'html': div };
+}
+
+var pell = function (n, node) {
+	var tree = pellHelper(n)
+		node.appendChild(tree.html);
+	  node.setAttribute("id", "pell");
+}
 
 
 fib(9, document.querySelector('.red'));
+// pell(9, document.querySelector('.blue'));
