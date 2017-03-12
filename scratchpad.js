@@ -85,5 +85,27 @@ var pell = function (n, node) {
 }
 
 
+// divMakerMaker() is a function which returns a function
+// divMakerMaker() takes two arguments and creates a function which requires
+// no arguments of its own, but upon invocation "remembers" the functions it
+// was created with
+var divMakerMaker = function(color, id) {
+	return function() {
+		var div = document.createElement('div');
+		div.setAttribute('class', color + ' shadowed stuff-box');
+		div.setAttribute('id', id);
+		document.body.appendChild(div);
+	}
+}
+
+var redDiv = divMakerMaker('red', 'fib');
+var yellowDiv = divMakerMaker('blue', 'yomama');
+var blueDiv = divMakerMaker('yellow', 'fib');
+
+redDiv();
+blueDiv();
+yellowDiv();
+
 fib(9, document.querySelector('.red'));
-// pell(9, document.querySelector('.blue'));
+pell(9, document.querySelector('.blue'));
+
