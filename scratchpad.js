@@ -49,42 +49,6 @@ var fib = function (n, node) {
 	  node.setAttribute("id", "fib");
 }
 
-// IIFE = Immediately-invoked function expression
-// An anonymous function which we create, invoke, then throw away.
-// It exists to meet these aims:
-//   0) Avoid clobbering an existing variable named "div" in the global namespace. I don't have
-//      another variable called "div" today, but this protects my webpage in the event that I
-//      later incorporate other JavaScript programs from elsewhere.
-//   1) Collect a few related program statements and keep them together in a single unit.
-// https://en.wikipedia.org/wiki/Immediately-invoked_function_expression
-( function(color, id) {
-	var div = document.createElement('div');
-	div.setAttribute('class', color + ' shadowed stuff-box');
-	div.setAttribute('id', id);
-	document.body.appendChild(div);
-}('red', 'fib'));
-
-fib(9, document.querySelector('.red'))
 
 
-// divMakerMaker() is a function which returns a function
-// divMakerMaker() takes two arguments and creates a function which requires
-// no arguments of its own, but upon invocation "remembers" the functions it
-// was created with
-var divMakerMaker = function(color, id) {
-	return function() {
-		var div = document.createElement('div');
-		div.setAttribute('class', color + ' shadowed stuff-box');
-		div.setAttribute('id', id);
-		document.body.appendChild(div);
-	}
-}
-
-var blueDiv = divMakerMaker('blue', 'fib');
-var yellowDiv = divMakerMaker('yellow', 'yomama');
-
-blueDiv();
-yellowDiv();
-
-fib(10, document.querySelector('.blue'))
-fib(11, document.querySelector('.yellow'))
+fib(9, document.querySelector('.red'));
