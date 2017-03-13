@@ -131,7 +131,7 @@ function tribHelper(n) {
 	return { 'value': value, 'html': div };
 }
 
-var pell = function (n, node) {
+var trib = function (n, node) {
 	var tree = tribHelper(n)
 		node.appendChild(tree.html);
 	  node.setAttribute("id", "trib");
