@@ -119,7 +119,7 @@ function tribHelper(n) {
 		clas = right.html.getAttribute("class");
 		right.html.setAttribute("class", clas + " trib-right");
 		
-		value = left.value + right.value;
+		value = left.value + center.value + right.value;
 		var p = document.createElement('p');
 		p.textContent = 'trib(' + n + ') = ' + value;
 		div.appendChild(p);
@@ -273,6 +273,6 @@ redDiv();
 blueDiv();
 yellowDiv();
 
-fib(9, document.querySelector('.red'));
-pell(9, document.querySelector('.blue'));
-trib(9, document.querySelector('.yellow'));
+fib(11, document.querySelector('.red'));
+pell(11, document.querySelector('.blue'));
+trib(11, document.querySelector('.yellow'));
