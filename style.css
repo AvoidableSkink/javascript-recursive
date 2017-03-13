@@ -40,6 +40,33 @@
 	margin-left: 4px;
 }
 
+#trib {
+	display: inline-block;
+	width: 20000px;
+}
+
+.trib {
+	background-color: rgba(0,0,255,0.1);
+}
+
+.trib-left {
+	float: left;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.trib-center {
+    float: center;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.trib-right {
+	float: right;
+	display: inline-block;
+	margin-left: 4px;
+}
+
 .shadowed {
 	text-shadow: 1px 1px 2px black;
 	color:       white;
