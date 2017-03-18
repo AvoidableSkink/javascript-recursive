@@ -112,14 +112,14 @@ function tribHelper(n) {
 		left.html.setAttribute("class", clas + " trib-left");
 		
 		var center = tribHelper(n - 2);
-		clas = right.html.getAttribute("class");
-		right.html.setAttribute("class", clas + " trib-center");
+		clas = center.html.getAttribute("class");
+		center.html.setAttribute("class", clas + " trib-center");
 
 		var right = tribHelper(n - 3);
 		clas = right.html.getAttribute("class");
 		right.html.setAttribute("class", clas + " trib-right");
 		
-		value = left.value + right.value;
+		value = left.value + center.value + right.value;
 		var p = document.createElement('p');
 		p.textContent = 'trib(' + n + ') = ' + value;
 		div.appendChild(p);
@@ -131,12 +131,11 @@ function tribHelper(n) {
 	return { 'value': value, 'html': div };
 }
 
-var pell = function (n, node) {
+var trib = function (n, node) {
 	var tree = tribHelper(n)
 		node.appendChild(tree.html);
 	  node.setAttribute("id", "trib");
 }
-
 
 // divMakerMaker() is a function which returns a function
 // divMakerMaker() takes two arguments and creates a function which requires
@@ -159,6 +158,6 @@ redDiv();
 blueDiv();
 yellowDiv();
 
-fib(9, document.querySelector('.red'));
-pell(9, document.querySelector('.blue'));
-// trib(9, document.querySelector('.yellow'));
+fib(11, document.querySelector('.red'));
+pell(11, document.querySelector('.blue'));
+trib(11, document.querySelector('.yellow'));
