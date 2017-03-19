@@ -9,13 +9,13 @@
 
 .fib-left {
 	float: left;
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-right: 4px;
 }
 
 .fib-right {
 	float: right;
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-left: 4px;
 }
 

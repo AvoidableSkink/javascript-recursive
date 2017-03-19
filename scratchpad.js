@@ -158,6 +158,6 @@ redDiv();
 blueDiv();
 yellowDiv();
 
-fib(11, document.querySelector('.red'));
-pell(11, document.querySelector('.blue'));
-trib(11, document.querySelector('.yellow'));
+fib(5, document.querySelector('.red'));
+pell(5, document.querySelector('.blue'));
+trib(5, document.querySelector('.yellow'));
