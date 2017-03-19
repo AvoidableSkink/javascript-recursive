@@ -109,10 +109,9 @@ function tribHelper(n) {
 		else if (n === 1) {
 			value = 0;
 		}
-		else if (n === 2)
-			{
-				value = 1;
-			}
+		else if (n === 2) {
+			value = 1;
+		}
 		var p = document.createElement('p');
 		p.textContent = 'trib(' + n + ') = ' + value;
 		div.appendChild(p)
