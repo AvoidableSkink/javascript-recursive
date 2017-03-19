@@ -1,10 +1,9 @@
 function fibHelper(n) {
+	n = parseInt(n);
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "fib");
 	
-	n = parseInt(n);
-
 	// leaf nodes aka. base case
 	if (n < 2) {
 		if (n === 0) {
@@ -47,6 +46,7 @@ var fib = function (n, node) {
 }
 
 function pellHelper(n) {
+	n = parseInt(n);
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "pell");
@@ -84,12 +84,19 @@ function pellHelper(n) {
 }
 
 var pell = function (n, node) {
+	var pellTree = node.querySelector('div.pell');
+	if (pellTree) {
+		node.removeChild(pellTree);
+	}
+	
 	var tree = pellHelper(n)
 		node.appendChild(tree.html);
+		node.setAttribute("id", "pell");
 }
 
 //implement tribbonacci sequence
 function tribHelper(n) {
+	n = parseInt(n);
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "trib");
@@ -136,6 +143,11 @@ function tribHelper(n) {
 }
 
 var trib = function (n, node) {
+	var tribTree = node.querySelector('div.trib');
+	if (tribTree) {
+		node.removeChild(tribTree);
+	}
+	
 	var tree = tribHelper(n)
 		node.appendChild(tree.html);
 }
@@ -153,6 +165,7 @@ var fibSlider = function(me) {
 	button.textContent = 'Fib(' + me.value + ')';
 }
 
+<<<<<<< HEAD
 var style = document.createElement('style');
 style.textContent = 
 "#fib {" +
@@ -314,4 +327,31 @@ trib(11, document.querySelector('.yellow'));
 // fib(5, document.querySelector('.red'));
 // pell(5, document.querySelector('.blue'));
 // trib(5, document.querySelector('.yellow'));
+>>>>>>> side-branch
+=======
+var pellButton = function(me) {
+	var form = me.parentNode;
+	var slider = form.querySelector('input');
+	var value = slider.value;
+	pell(value, form.parentNode);
+}
+
+var pellSlider = function(me) {
+	var form = me.parentNode;
+	var button = form.querySelector('button');
+	button.textContent = 'Pell(' + me.value + ')';
+}
+
+var tribButton = function(me) {
+	var form = me.parentNode;
+	var slider = form.querySelector('input');
+	var value = slider.value;
+	trib(value, form.parentNode);
+}
+
+var tribSlider = function(me) {
+	var form = me.parentNode;
+	var button = form.querySelector('button');
+	button.textContent = 'Trib(' + me.value + ')';
+}
 >>>>>>> side-branch
