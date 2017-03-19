@@ -2,6 +2,8 @@ function fibHelper(n) {
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "fib");
+	
+	n = parseInt(n);
 
 	// leaf nodes aka. base case
 	if (n < 2) {
@@ -35,10 +37,13 @@ function fibHelper(n) {
 	return { 'value': value, 'html': div };
 }
 var fib = function (n, node) {
+	var fibTree = node.querySelector('div.fib');
+	if (fibTree) {
+		node.removeChild(fibTree);
+	}
+	
 	var tree = fibHelper(n)
 		node.appendChild(tree.html);
-		//node.style = "display: inline-block;";
-	  node.setAttribute("id", "fib");
 }
 
 function pellHelper(n) {
@@ -81,7 +86,6 @@ function pellHelper(n) {
 var pell = function (n, node) {
 	var tree = pellHelper(n)
 		node.appendChild(tree.html);
-	  node.setAttribute("id", "pell");
 }
 
 //implement tribbonacci sequence
@@ -134,9 +138,20 @@ function tribHelper(n) {
 var trib = function (n, node) {
 	var tree = tribHelper(n)
 		node.appendChild(tree.html);
-	  node.setAttribute("id", "trib");
 }
 
+var fibButton = function(me) {
+	var form = me.parentNode;
+	var slider = form.querySelector('input');
+	var value = slider.value;
+	fib(value, form.parentNode);
+}
+
+var fibSlider = function(me) {
+	var form = me.parentNode;
+	var button = form.querySelector('button');
+	button.textContent = 'Fib(' + me.value + ')';
+}
 
 var style = document.createElement('style');
 style.textContent = 
@@ -255,6 +270,7 @@ document.querySelector('body').appendChild(style);
 // divMakerMaker() is a function which returns a function
 // divMakerMaker() takes two arguments and creates a function which requires
 // no arguments of its own, but upon invocation "remembers" the functions it
+<<<<<<< HEAD
 // was created with
 var divMakerMaker = function(color, id) {
 	return function() {
@@ -276,3 +292,26 @@ yellowDiv();
 fib(11, document.querySelector('.red'));
 pell(11, document.querySelector('.blue'));
 trib(11, document.querySelector('.yellow'));
+=======
+// // was created with
+// var divMakerMaker = function(color, id) {
+// 	return function() {
+// 		var div = document.createElement('div');
+// 		div.setAttribute('class', color + ' shadowed stuff-box');
+// 		div.setAttribute('id', id);
+// 		document.body.appendChild(div);
+// 	}
+// }
+
+// var redDiv = divMakerMaker('red', 'fib');
+// var blueDiv = divMakerMaker('blue', 'pell');
+// var yellowDiv = divMakerMaker('yellow', 'trib');
+
+// redDiv();
+// blueDiv();
+// yellowDiv();
+
+// fib(5, document.querySelector('.red'));
+// pell(5, document.querySelector('.blue'));
+// trib(5, document.querySelector('.yellow'));
+>>>>>>> side-branch
