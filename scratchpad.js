@@ -44,6 +44,7 @@ var fib = function (n, node) {
 	
 	var tree = fibHelper(n)
 		node.appendChild(tree.html);
+		node.setAttribute("id", "fib");
 }
 
 function pellHelper(n) {
@@ -86,6 +87,7 @@ function pellHelper(n) {
 var pell = function (n, node) {
 	var tree = pellHelper(n)
 		node.appendChild(tree.html);
+		node.setAttribute("id", "pell");
 }
 
 //implement tribbonacci sequence
@@ -151,4 +153,30 @@ var fibSlider = function(me) {
 	var form = me.parentNode;
 	var button = form.querySelector('button');
 	button.textContent = 'Fib(' + me.value + ')';
+}
+
+var pellButton = function(me) {
+	var form = me.parentNode;
+	var slider = form.querySelector('input');
+	var value = slider.value;
+	pell(value, form.parentNode);
+}
+
+var pellSlider = function(me) {
+	var form = me.parentNode;
+	var button = form.querySelector('button');
+	button.textContent = 'Pell(' + me.value + ')';
+}
+
+var tribButton = function(me) {
+	var form = me.parentNode;
+	var slider = form.querySelector('input');
+	var value = slider.value;
+	trib(value, form.parentNode);
+}
+
+var tribSlider = function(me) {
+	var form = me.parentNode;
+	var button = form.querySelector('button');
+	button.textContent = 'Trib(' + me.value + ')';
 }
