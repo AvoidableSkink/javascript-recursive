@@ -85,6 +85,11 @@ function pellHelper(n) {
 }
 
 var pell = function (n, node) {
+	var pellTree = node.querySelector('div.pell');
+	if (pellTree) {
+		node.removeChild(pellTree);
+	}
+	
 	var tree = pellHelper(n)
 		node.appendChild(tree.html);
 		node.setAttribute("id", "pell");
@@ -138,6 +143,11 @@ function tribHelper(n) {
 }
 
 var trib = function (n, node) {
+	var tribTree = node.querySelector('div.trib');
+	if (tribTree) {
+		node.removeChild(tribTree);
+	}
+	
 	var tree = tribHelper(n)
 		node.appendChild(tree.html);
 }
