@@ -1,10 +1,9 @@
 function fibHelper(n) {
+	n = parseInt(n);
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "fib");
 	
-	n = parseInt(n);
-
 	// leaf nodes aka. base case
 	if (n < 2) {
 		if (n === 0) {
@@ -44,10 +43,10 @@ var fib = function (n, node) {
 	
 	var tree = fibHelper(n)
 		node.appendChild(tree.html);
-		node.setAttribute("id", "fib");
 }
 
 function pellHelper(n) {
+	n = parseInt(n);
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "pell");
@@ -97,6 +96,7 @@ var pell = function (n, node) {
 
 //implement tribbonacci sequence
 function tribHelper(n) {
+	n = parseInt(n);
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "trib");
