@@ -2,6 +2,8 @@ function fibHelper(n) {
 	var value;
 	var div = document.createElement('div');
 	div.setAttribute("class", "fib");
+	
+	n = parseInt(n);
 
 	// leaf nodes aka. base case
 	if (n < 2) {
@@ -35,9 +37,13 @@ function fibHelper(n) {
 	return { 'value': value, 'html': div };
 }
 var fib = function (n, node) {
+		var fibTree = node.querySelector('div.fib');
+	if (fibTree) {
+		node.removeChild(fibTree);
+	}
+	
 	var tree = fibHelper(n)
 		node.appendChild(tree.html);
-		//node.style = "display: inline-block;";
 	  node.setAttribute("id", "fib");
 }
 
@@ -137,27 +143,40 @@ var trib = function (n, node) {
 	  node.setAttribute("id", "trib");
 }
 
+var fibButton = function(me) {
+	var form = me.parentNode;
+	var slider = form.querySelector('input');
+	var value = slider.value;
+	fib(value, form.parentNode);
+}
+
+var fibSlider = function(me) {
+	var form = me.parentNode;
+	var button = form.querySelector('button');
+	button.textContent = 'Fib(' + me.value + ')';
+}
+
 // divMakerMaker() is a function which returns a function
 // divMakerMaker() takes two arguments and creates a function which requires
 // no arguments of its own, but upon invocation "remembers" the functions it
-// was created with
-var divMakerMaker = function(color, id) {
-	return function() {
-		var div = document.createElement('div');
-		div.setAttribute('class', color + ' shadowed stuff-box');
-		div.setAttribute('id', id);
-		document.body.appendChild(div);
-	}
-}
+// // was created with
+// var divMakerMaker = function(color, id) {
+// 	return function() {
+// 		var div = document.createElement('div');
+// 		div.setAttribute('class', color + ' shadowed stuff-box');
+// 		div.setAttribute('id', id);
+// 		document.body.appendChild(div);
+// 	}
+// }
 
-var redDiv = divMakerMaker('red', 'fib');
-var blueDiv = divMakerMaker('blue', 'pell');
-var yellowDiv = divMakerMaker('yellow', 'trib');
+// var redDiv = divMakerMaker('red', 'fib');
+// var blueDiv = divMakerMaker('blue', 'pell');
+// var yellowDiv = divMakerMaker('yellow', 'trib');
 
-redDiv();
-blueDiv();
-yellowDiv();
+// redDiv();
+// blueDiv();
+// yellowDiv();
 
-fib(5, document.querySelector('.red'));
-pell(5, document.querySelector('.blue'));
-trib(5, document.querySelector('.yellow'));
+// fib(5, document.querySelector('.red'));
+// pell(5, document.querySelector('.blue'));
+// trib(5, document.querySelector('.yellow'));
