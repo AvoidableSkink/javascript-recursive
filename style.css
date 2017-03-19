@@ -1,10 +1,6 @@
-#fib {
-	display: inline-block;
-	width: 20000px;
-}
-
 .fib {
-	background-color: rgba(0,0,255,0.1);
+    display: inline-block;
+	background-color: rgba(112,128,144,0.1);
 }
 
 .fib-left {
@@ -17,11 +13,6 @@
 	float: right;
 	display: inline-block;
 	margin-left: 4px;
-}
-
-#pell {
-	display: inline-block;
-	width: 20000px;
 }
 
 .pell {
@@ -38,11 +29,6 @@
 	float: right;
 	display: inline-block;
 	margin-left: 4px;
-}
-
-#trib {
-	display: inline-block;
-	width: 20000px;
 }
 
 .trib {

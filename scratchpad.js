@@ -37,14 +37,13 @@ function fibHelper(n) {
 	return { 'value': value, 'html': div };
 }
 var fib = function (n, node) {
-		var fibTree = node.querySelector('div.fib');
+	var fibTree = node.querySelector('div.fib');
 	if (fibTree) {
 		node.removeChild(fibTree);
 	}
 	
 	var tree = fibHelper(n)
 		node.appendChild(tree.html);
-	  node.setAttribute("id", "fib");
 }
 
 function pellHelper(n) {
@@ -87,7 +86,6 @@ function pellHelper(n) {
 var pell = function (n, node) {
 	var tree = pellHelper(n)
 		node.appendChild(tree.html);
-	  node.setAttribute("id", "pell");
 }
 
 //implement tribbonacci sequence
@@ -140,7 +138,6 @@ function tribHelper(n) {
 var trib = function (n, node) {
 	var tree = tribHelper(n)
 		node.appendChild(tree.html);
-	  node.setAttribute("id", "trib");
 }
 
 var fibButton = function(me) {
