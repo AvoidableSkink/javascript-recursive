@@ -152,28 +152,3 @@ var fibSlider = function(me) {
 	var button = form.querySelector('button');
 	button.textContent = 'Fib(' + me.value + ')';
 }
-
-// divMakerMaker() is a function which returns a function
-// divMakerMaker() takes two arguments and creates a function which requires
-// no arguments of its own, but upon invocation "remembers" the functions it
-// // was created with
-// var divMakerMaker = function(color, id) {
-// 	return function() {
-// 		var div = document.createElement('div');
-// 		div.setAttribute('class', color + ' shadowed stuff-box');
-// 		div.setAttribute('id', id);
-// 		document.body.appendChild(div);
-// 	}
-// }
-
-// var redDiv = divMakerMaker('red', 'fib');
-// var blueDiv = divMakerMaker('blue', 'pell');
-// var yellowDiv = divMakerMaker('yellow', 'trib');
-
-// redDiv();
-// blueDiv();
-// yellowDiv();
-
-// fib(5, document.querySelector('.red'));
-// pell(5, document.querySelector('.blue'));
-// trib(5, document.querySelector('.yellow'));
