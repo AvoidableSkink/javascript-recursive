@@ -156,37 +156,33 @@ var fibButton = function(me) {
 	var form = me.parentNode;
 	var slider = form.querySelector('input');
 	var value = slider.value;
-	fib(value, form.parentNode);
+	if(me.id === "fib")
+	{
+		fib(value, form.parentNode);
+	}
+	if(me.id === "pell")
+	{
+		pell(value, form.parentNode);
+	}
+	if(me.id === "trib")
+	{
+		trib(value, form.parentNode);
+	}
 }
 
 var fibSlider = function(me) {
 	var form = me.parentNode;
 	var button = form.querySelector('button');
-	button.textContent = 'Fib(' + me.value + ')';
-}
-
-var pellButton = function(me) {
-	var form = me.parentNode;
-	var slider = form.querySelector('input');
-	var value = slider.value;
-	pell(value, form.parentNode);
-}
-
-var pellSlider = function(me) {
-	var form = me.parentNode;
-	var button = form.querySelector('button');
-	button.textContent = 'Pell(' + me.value + ')';
-}
-
-var tribButton = function(me) {
-	var form = me.parentNode;
-	var slider = form.querySelector('input');
-	var value = slider.value;
-	trib(value, form.parentNode);
-}
-
-var tribSlider = function(me) {
-	var form = me.parentNode;
-	var button = form.querySelector('button');
-	button.textContent = 'Trib(' + me.value + ')';
+	if(me.id === "fib")
+	{
+		button.textContent = 'Fib(' + me.value + ')';
+	}
+	if(me.id === "pell")
+	{
+		button.textContent = 'Pell(' + me.value + ')';
+	}
+	if(me.id === "trib")
+	{
+		button.textContent = 'Trib(' + me.value + ')';
+	}
 }
